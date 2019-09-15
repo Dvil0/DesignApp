@@ -18,7 +18,20 @@ class BasicView extends StatelessWidget{
           _createText(),
           _createText(),
           _createText(),
-          _createText()
+          _createText(),
+          SizedBox(height: 20.0,),
+          FlatButton(
+            shape: StadiumBorder(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+              child: Text('Next', style: TextStyle(fontSize: 20.0),),
+            ),
+            color: Colors.blue,
+            textColor: Colors.white,
+            onPressed: (){
+              Navigator.pushNamed(context, 'scroll');
+            },
+          )
         ],
         ),
       )

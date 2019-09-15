@@ -10,7 +10,7 @@ class ScrollsView extends StatelessWidget{
         scrollDirection: Axis.vertical,
         children: <Widget>[
           _pageOne(),
-          _pageTwo()
+          _pageTwo( context )
         ],
       )
     ); 
@@ -62,16 +62,16 @@ class ScrollsView extends StatelessWidget{
     );
   }
 
-  Widget _pageTwo(){
+  Widget _pageTwo( BuildContext context ){
     return Stack(
       children: <Widget>[
         _backgroundColor(),
-        _actionButton()
+        _actionButton( context )
       ],
     );
   }
 
-  Widget _actionButton(){
+  Widget _actionButton( BuildContext context ){
 
     return Container(
       width: double.infinity,
@@ -81,10 +81,12 @@ class ScrollsView extends StatelessWidget{
         children: <Widget>[
               FlatButton(
                 shape: StadiumBorder(),
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, 'button');
+                },
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-                  child: Text('Welcome', style: TextStyle(fontSize: 20.0),),
+                  child: Text('Next', style: TextStyle(fontSize: 20.0),),
                 ),
                 color: Colors.blue,
                 textColor: Colors.white,
